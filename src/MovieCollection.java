@@ -17,6 +17,8 @@ public class MovieCollection {
     public ArrayList<Movie> getCollection() {
         return collection;
     }
+
+
     // Method to search for a movie by title
     public Movie searchByTitle(String title) {
         for (Movie movie : collection) {
@@ -26,4 +28,18 @@ public class MovieCollection {
         }
         return null; // Return null if movie not found
     }
+
+    public String searchMovie(String search) {
+        String filmSearchMatches = "";
+        for (Movie movie : collection) {
+            if (movie.getTitle().toLowerCase().contains(search.toLowerCase())) {
+                filmSearchMatches += "\n" + movie.toString();
+            }
+        }
+        if (filmSearchMatches.isEmpty()) {
+            return "\nDer var ikke et match;";
+        }
+        return filmSearchMatches;
+    }
+
 }
