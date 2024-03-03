@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Controller {
@@ -24,5 +25,29 @@ public class Controller {
             }
         }
         return null; // Return null if movie not found
+    }
+
+    public static void editMovie(String title, String newTitle, String director, int length, int year, String genre, boolean movieColour) {
+        ArrayList<Movie> moviesToEdit = new ArrayList<>();
+        for (Movie movie : moviesToEdit) {
+            if (movie.getTitle().equalsIgnoreCase(title)) {
+                moviesToEdit.add(movie);
+            }
+        }
+
+        if (!moviesToEdit.isEmpty()) {
+            Movie movieToEdit = moviesToEdit.get(0);
+
+            movieToEdit.setTitle(newTitle);
+            movieToEdit.setDirector(director);
+            movieToEdit.setMovieColour(movieColour);
+            movieToEdit.setLength(length);
+            movieToEdit.setYear(year);
+            movieToEdit.setGenre(genre);
+        } else {
+            System.out.println("Der blev ikke fundet en film med navnet " + title);
+        }
+
+
     }
 }

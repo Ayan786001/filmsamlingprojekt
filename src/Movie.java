@@ -1,5 +1,5 @@
 public class Movie {
-    private String title;
+    String title;
     private String director;
 
     private int length;
@@ -48,9 +48,27 @@ public class Movie {
         return "Title: " + title + ", Director: " + director +
                 ", Length: " + length + ", Year: " + year +
                 ", Genre: " + genre + ", Movie Colour: " + (movieColour ? "Coloured" : "Black and White");
-        }
+    }
+
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+    public void setTitle (String title){
+    this.title = title;
 
     }
-//
-//    }
+    public void setLength(int length){
+        this.length = length;
+    }
+    public void setYear(int year){
+        this.year = year;
+    }
+    public void setGenre(String genre){
+    this.genre= genre;
+    }
+    public void setMovieColour(Boolean movieColour){
+        this.movieColour = movieColour;
+    }
 
+}
